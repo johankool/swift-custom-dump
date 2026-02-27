@@ -64,3 +64,12 @@ jobs:
 
       - name: Build
         run: swift build --swift-sdk swift-6.2.3-RELEASE_wasm --target CustomDump -Xlinker -z -Xlinker stack-size=$((1024 * 1024))
+
+  android:
+    name: Android (Swift 6.0.2)
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Run Android Tests
+        uses: skiptools/swift-android-action@v2
